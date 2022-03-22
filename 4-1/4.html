@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>write & prompt</title>
+    </head>
+    <body>
+        <h3>섭시 온도를 화시 온도로 변경합니다.</h3><br>
+        <hr>
+        <script>
+            var ret = prompt("섭시 온도를 입력하세요", "10");
+            if(ret == null)
+            {
+                alert("변경할려는 섭시 온도를 입력하세요.");
+            }
+            else if(ret == "")
+            {
+                alert("변경할려는 섭시 온도를 입력하세요.");
+            }
+            else
+            {
+                var hwaci=ret*9/5+32
+            }
+        </script>
+        <h3>변경 후의 온도는 다음과 같습니다.</h3>
+        <br>
+        <script>
+            document.write(hwaci);
+            document.write("입니다. <br>");
+        </script>
+    </body>
+</html>

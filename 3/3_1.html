@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>:hover 활용</h1>
+        <br>
+        <hr>
+    </head>
+    <script src="3_1.js"></script>
+    <body>
+        <p>마우스를 올리면 카드의 앞면이 보인다.</p>
+        <style>
+            img
+            {
+                position: absolute;
+                left:20px;
+
+                width:auto;
+            }
+            #img_front
+            {
+                opacity:0;
+            }
+            #img_back
+            {
+                opacity:1;
+            }
+        </style>
+        <img src="media/img_back.PNG" alt="이미지"
+            onmouseover="over(this)"
+            onmouseout="out(this)">
+    </body>
+</html>
