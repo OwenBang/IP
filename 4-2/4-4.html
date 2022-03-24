@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var ret = prompt("수식을 입력하세요. = 포함하지 않음.", "");
+            document.write("<h1>수식 계산하기</h1><hr>")
+            if(ret == "") 
+            { 
+	            document.write("입력된 식이 없습니다.");
+            }
+            else if(isNaN(ret[ret.length - 1]))
+            {
+                document.write("기호 뒤에 숫자가 없습니다.");
+            }
+            else 
+            {
+	            var result = eval(ret);
+                document.write(ret + " = " + result);
+            }
+        </script>
+    </body>
+</html>

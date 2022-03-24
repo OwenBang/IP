@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var ret = prompt("100 미만의 정수만 입력:", "");
+            if(isNaN(ret)) 
+            { 
+	            alert("1~100 사이의 값을 입력하세요.");
+            }
+            else 
+            {
+	            var n = parseInt(ret);
+                if(n > 100)
+                {
+                    alert("정수 " + n + ", 은 100보다 작지 않습니다.");
+                }
+                else if(n < 1)
+                {
+                    alert("정수" + n + ", 은 1보다 작습니다.")
+                }
+                else
+                {
+                    var result = 0;
+                    for(var i = 1; i <= n; i++)
+                    {
+                        result += i;
+                    }
+                    alert(result);
+                }
+            }
+        </script>
+    </body>
+</html>
