@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h3>덧셈 계산 하시고, 결과를 입력하고 확인 버튼을 클릭하여 정확한지 확인해 보세요.</h3>
+        <script>
+            function calc() {
+                x = Number(a);
+                y = Number(b);
+                if (x + y == document.getElementById("result").value)
+                {
+                    alert('정답');
+                }
+                else
+                {
+                    alert('오답');
+                }
+            }
+        </script>
+        <hr>
+    </head>
+    <body>
+        <script>
+            var a = Math.floor(Math.random() * 100 + 1);
+            var b = Math.floor(Math.random() * 100 + 1);
+            var c;
+            document.write(a + "+" + b + "=<br>");
+            document.write("덧셈 결과 : <input type='text' id='result'><input type='button' value='check' onclick='calc()'>");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head><h1>숫자 맞추기 게임</h1></head>
+    <body>
+        <div id="number_game_position">
+            <p>이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다. 숫자는 1부터 100사이에 있습니다.</p>
+            <form>
+                <p>숫자 : <input type="text" id="x" size="20"> <input type="button" id="btn" value="확인"
+                        onclick="guess()"></p>
+                <p>추측횟수 : <input type="text" id="guesses" size="20">힌트 : <input type="text" id="result" size="20"></p>
+            </form>
+            <div id="area"></div>
+        </div>
+        <script>
+            var ran = Math.floor(Math.random() * 100 + 1);
+            var count = 1;
+            function guess() {
+                var num1 = Number(document.getElementById("x").value);
+                if (num1 == "") {
+                    alert('숫자를 입력하세요');
+                    count--;
+                }
+                else if (num1 == ran) {
+                    var area = document.getElementById("area");
+                    area.innerHTML = count + '번 째에 맞춤';
+                }
+                else {
+                    if (ran > num1) {
+                        document.getElementById("result").value = ("너무 작음");
+                    }
+                    else {
+                        document.getElementById("result").value = ("너무 큼");
+                    }
+                }
+                document.getElementById("guesses").value = (count++);
+            }
+        </script>
+    </body>
+</html>

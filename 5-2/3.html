@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>덧셈 계산기</h1>
+        <script>
+            function calc(type) {
+                x = Number(document.getElementById("number1").value);
+                y = Number(document.getElementById("number2").value);
+                document.calculator.result.value = x + y;
+            }
+        </script>
+    
+    </head>
+    <body>
+        <form name="calculator">
+            첫 번째 정수:   <input type="text" id="number1"><br />
+            두 번째 정수:   <input type="text" id="number2"><br />
+            합계:  <input type="text" name="result"><br />
+            <input type="button" value="계산" onclick="calc(1);">
+        </form>
+    
+    </body>
+</html>
