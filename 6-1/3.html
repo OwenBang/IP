@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head><title>ifram2</title></head>
+    <body>
+        <h3>메뉴를 선택하세요</h3>
+        <form id = "mycheck">
+            <input type="checkbox" id="짜장면" name="짜장면" value="짜장면">
+            <label for="짜장면">짜장면</label><br>
+            <input type="checkbox" id="짬뽕" name="짬뽕" value="짬뽕">
+            <label for="짬뽕">짬뽕</label><br>
+            <input type="checkbox" id="햄버거" name="햄버거" value="햄버거">
+            <label for="햄버거">햄버거</label><br><br>
+            <input type="button" value="주문완료" onclick="checkmenu()"><br>
+            <div id="result"></div>
+        </form>
+        <script>
+            function checkmenu()
+            {
+                document.getElementById("result").innerHTML="";
+                var checkarr = document.getElementById("mycheck");
+                var text;
+                for(i=0;i<checkarr.length;i++)
+                {
+                    if(checkarr[i].checked)
+                    {
+                        if(document.getElementById("result").innerHTML == "")
+                        {
+                            document.getElementById("result").innerHTML+=checkarr[i].value;
+                        }
+                        else
+                        {
+                            document.getElementById("result").innerHTML+=", " + checkarr[i].value;
+                        }
+                    }
+                }
+                document.getElementById("result").innerHTML+="을(를) 주문하였습니다.\n";
+            }
+        </script>
+    </body>
+</html>
