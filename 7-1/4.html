@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head><title>라디오 버튼과 이미지 출력</title></head>
+    <body>
+        <h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3>
+        <hr>
+        <form>
+            <label><input type="radio" value="바나나" checked="checked" name="fruit" onclick="f1(this.value)">바나나</label>
+            <label><input type="radio" value="망고" name="fruit" onclick="f1(this.value)">망고</label>
+            <label><input type="radio" value="사과" name="fruit" onclick="f1(this.value)">사과</label>
+            <br>
+            <img src="media/1.jpg" id="img">
+        </form>
+        <script>
+            function f1(temp)
+            {
+                if(temp=="바나나")
+                {
+                    document.getElementById("img").src="media/1.jpg"
+                }
+                else if(temp=="망고")
+                {
+                    document.getElementById("img").src="media/2.jpg"
+                }
+                else
+                {
+                    document.getElementById("img").src="media/3.jpg"
+                }
+            }
+        </script>
+    </body>
+</html>

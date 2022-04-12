@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head><title>select 객체에서 선택한 과일 출력</title></head>
+    <body>
+        <h3>select 객체에서 선택한 과일 출력</h3>
+        <hr>
+        <p>과일을 선택하면 이미지가 출력됩니다.</p>
+        <form>
+            <select id="fruit" onchange="f1()">
+                <option value="바나나" selected>바나나</option>
+                <option value="망고">망고</option>
+                <option value="사과">사과</option>
+            </select>
+            <img src="media/1.jpg" id="img">
+        </form>
+        <script>
+            function f1()
+            {
+                var fruit = document.getElementById("fruit");
+                if(fruit.options[fruit.selectedIndex].value=="바나나")
+                {
+                    document.getElementById("img").src="media/1.jpg"
+                }
+                else if(fruit.options[fruit.selectedIndex].value=="망고")
+                {
+                    document.getElementById("img").src="media/2.jpg"
+                }
+                else
+                {
+                    document.getElementById("img").src="media/3.jpg"
+                }
+            }
+        </script>
+    </body>
+</html>
