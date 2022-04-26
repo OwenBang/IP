@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>중간2</title>
+	</head>
+	<body>
+		<h1 align="center">Time Countdown</h1>
+		<br />
+		<div id="time" align="center">
+			<h1>00:00:00</h1>
+		</div>
+		<form align="center">
+			<input type="number" id="hour" value="0" />
+			<input type="number" id="min" value="0" />
+			<input type="number" id="sec" value="0" />
+			<input type="button" id="ok" value="OK" onclick="f1()" />
+			<input type="button" id="reset" value="Reset" />
+		</form>
+		<div id="left" align="center"></div>
+		<script>
+			function time() {
+				var time = new Date();
+				var hour = time.getHours();
+				var min = time.getMinutes();
+				var sec = time.getSeconds();
+				document.getElementById("time").innerHTML =
+					"<h1>" + hour + ":" + min + ":" + sec + "</h1>";
+			}
+			setInterval(time, 1000);
+			function f1() {
+				var time = new Date();
+				var hour = time.getHours();
+				var min = time.getMinutes();
+				var sec = time.getSeconds();
+				var shour = document.getElementById("hour").value;
+				var smin = document.getElementById("min").value;
+				var ssec = document.getElementById("sec").value;
+				var rhour = shour - hour;
+				var rmin = smin - min;
+				if (rmin < 0) {
+					rhour = rhour - 1;
+					rmin = rmin + 60;
+				}
+				var rsec = ssec - sec;
+				if (rsec < 0) {
+					rmin = rnmin - 1;
+					rsec = rsec + 60;
+				}
+				document.getElementById("left").innerHTML =
+					"<h1>Time left: " + rhour + ":" + rmin + ":" + rsec + "</h1>";
+			}
+			setInterval(f1, 1000);
+		</script>
+	</body>
+</html>

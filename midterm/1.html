@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>중간1</title>
+	</head>
+	<body>
+		<h1>No.1:은행 적금 계산기의 구현</h1>
+		<table border="1">
+			<tbody>
+				<tr>
+					<td>Initial Capitals</td>
+					<td><input type="text" id="cap" value="10000" />$</td>
+				</tr>
+				<tr>
+					<td>Annual Interest Rate:</td>
+					<td><input type="text" id="ann" value="5" />%</td>
+				</tr>
+				<tr>
+					<td>Deposit Period</td>
+					<td><input type="text" id="dep" value="10" />Year</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2">
+						<input
+							type="text"
+							value="Calculate now!"
+							onclick="calculate()"
+							onmouseover="over()"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td>Principal and Interest</td>
+					<td><input type="text" id="pri" value="0" />$</td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			function calculate() {
+				var cap = document.getElementById("cap");
+				var ann = document.getElementById("ann");
+				var dep = document.getElementById("dep");
+				var pri = document.getElementById("pri");
+				if (cap.value > 1000000 || cap.value < 0) {
+					alert("입력 금액은 0~1000000 만원의 범위 수");
+				}
+				if (ann.value > 8 || ann.value < 0) {
+					alert("이자율:0~8의 범위 수");
+				}
+				if (dep.value > 20 || dep.value < 1) {
+					alert("예치기간:1~20 범위 수");
+				}
+				pri.value = cap.value;
+				for (var i = 0; i < dep.value; i++) {
+					pri.value = pri.value * (1 + ann.value / 100);
+				}
+			}
+			function over() {
+				this.style.bgcolor = "#008CBA";
+			}
+		</script>
+	</body>
+</html>

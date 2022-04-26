@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>중간4</title>
+	</head>
+	<body>
+		<input
+			type="button"
+			id="add"
+			value="add_new_row"
+			onclick="add()"
+			onmouseover="this.style.backgroundColor='blue'"
+		/>
+		<input
+			type="button"
+			id="del"
+			value="delete_last_row"
+			onclick="del()"
+			onmouseover="this.style.backgroundColor='blue'"
+		/>
+		<table border="1" id="table">
+			<thead style="background-color: green">
+				<th>Header1</th>
+				<th>Header2</th>
+			</thead>
+			<tbody id="body"></tbody>
+		</table>
+		<script>
+			var cnt = 0;
+			function add() {
+				cnt = cnt + 1;
+				document.getElementById("body").innerHTML +=
+					"<tr><td>row" + cnt + ",cell1</td><td>row" + cnt + ",cell2</td></tr>";
+			}
+			function del() {
+				cnt = cnt - 1;
+				document.getElementById("body").innerHTML = "";
+				for (var i = 1; i <= cnt; i++) {
+					document.getElementById("body").innerHTML +=
+						"<tr><td>row" + i + ",cell1</td><td>row" + i + ",cell2</td></tr>";
+				}
+			}
+		</script>
+	</body>
+</html>
