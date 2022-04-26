@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>눈 내리는 사걀의 마을</title>
+        <style>
+            body{
+                background-image: url('media/snow.jpg');
+                background-repeat: no-repeat;
+            }
+
+            div{
+                border-style : none;
+                font-size : 20px;
+                color : white;
+            }
+        </style>
+        <script>
+            var SNOWS = 20;
+            var x = new Array();
+            var y = new Array();
+            var snow = new Array();
+            var speedOfwind = new Array();
+            var speedOfFall = new Array();
+            var step = new Array();
+            function fall()
+            {
+                for(let i=0; i<SNOWS; i++)
+                {
+                    y[i] += speedOfFall[i];
+                    x[i] += Math.cos(speedOfwind[i]);
+                    if(y[i] >= window.innerHeight-60)
+                    {
+                        x[i] = Math.floor(Math.random()*window.innerWidth);
+                        y[i] = 0;
+                        speedOfFall[i] = Math.random()*2+2;
+                    }
+                    if(x[i] >= window.innerWidth-50) x[i] = window.innerWidth - 50;
+                    else if(x[i] < 0) x[i] = 50;
+
+                    snow[i].style.top = y[i] + "px";
+                    snow[i].style.left = x[i] + "px";
+
+                    speedOfwind[i] += step[i];
+                }
+                setTimeout("fall()", 500);
+            }
+
+            function makeSnow()
+            {
+                for(let i=0; i<SNOWS; i++)
+                {
+                    let divtag = "<div class='snow' id=snowobj" + i + ">*</div>";
+                    document.write(divtag);
+
+                    snow[i] = document.getElementById("snowobj"+i);
+                }
+            }
+
+            function initSnowPosition()
+            {
+                for(let i=0; i<SNOWS; i++)
+                {
+                    x[i] = Math.floor(Math.random()*window.innerWidth-10);
+                    y[i] = Math.floor(Math.random()*window.innerHeight+10);
+                    speedOfFall[i] = Math.random()*2+2;
+                    speedOfwind[i] = 1;
+                    step[i] = Math.random()*0.1+0.05;
+
+                    snow[i].style.top = x[i] + "px";
+                    snow[i].style.left = y[i] + "px";
+                }
+            }
+            
+            makeSnow();
+
+            window.onload = function ()
+            {
+                initSnowPosition();
+                fall();
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
