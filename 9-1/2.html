@@ -10,18 +10,20 @@
 
             div{
                 border-style : none;
-                font-size : 20px;
+                font-size : 40px;
                 color : white;
+                position: absolute;
             }
         </style>
         <script>
-            var SNOWS = 20;
+            var SNOWS = 40;
             var x = new Array();
             var y = new Array();
             var snow = new Array();
             var speedOfwind = new Array();
             var speedOfFall = new Array();
             var step = new Array();
+            
             function fall()
             {
                 for(let i=0; i<SNOWS; i++)
@@ -34,6 +36,7 @@
                         y[i] = 0;
                         speedOfFall[i] = Math.random()*2+2;
                     }
+                    
                     if(x[i] >= window.innerWidth-50) x[i] = window.innerWidth - 50;
                     else if(x[i] < 0) x[i] = 50;
 
@@ -42,7 +45,7 @@
 
                     speedOfwind[i] += step[i];
                 }
-                setTimeout("fall()", 500);
+                setTimeout("fall()", 50);
             }
 
             function makeSnow()
@@ -66,8 +69,8 @@
                     speedOfwind[i] = 1;
                     step[i] = Math.random()*0.1+0.05;
 
-                    snow[i].style.top = x[i] + "px";
-                    snow[i].style.left = y[i] + "px";
+                    snow[i].style.top = y[i] + "px";
+                    snow[i].style.left = x[i] + "px";
                 }
             }
             
