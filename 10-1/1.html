@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function() 
+            {
+                $("#hide").click(function() 
+                {
+                    $("p").hide();
+                });
+                $("#show").click(function() 
+                {
+                    $("p").show();
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <p id="p">이것은 p요소입니다.</p>
+        <button id="hide">감추기</button>
+        <button id="show">보이기</button>
+    </body>
+</html>
